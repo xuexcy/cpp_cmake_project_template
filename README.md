@@ -10,7 +10,5 @@
 1. vscode clangd 插件:
   - 在 workspace 下设置 compile_command.json 路径
     `--compile-commands-dir=${workspaceFolder}/build_g++`
-  - 通过 `g++ -v -E -x c++ - < /dev/null 2>&1 | grep -A1 '#include <...>'` 获取 g++ include 的路径，并进行设置
-    `--extra-arg=-I/opt/homebrew/Cellar/gcc/14.2.0_1/include/c++/14`
 2. [clang-format](https://github.com/xuexcy/personal_conf/tree/master/clang)
 
