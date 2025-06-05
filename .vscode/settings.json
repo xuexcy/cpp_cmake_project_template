@@ -1,0 +1,6 @@
+{
+  "clangd.arguments": [
+    "--compile-commands-dir=${workspaceFolder}/build_g++",
+    "--extra-arg=-I/opt/homebrew/Cellar/gcc/14.2.0_1/include/c++/14"
+  ]
+}
