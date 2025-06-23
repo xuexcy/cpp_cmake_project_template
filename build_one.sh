@@ -26,6 +26,7 @@ fi
 
 cd $build_dir
 make $main
+
 status=$?
 if [ $status != 0 ]; then
     exit $status
