@@ -25,7 +25,7 @@ if [ $# -gt 0 ]; then
 fi
 
 cd $build_dir
-make $main # VERBOSE=1
+make -j$(getconf _NPROCESSORS_ONLN) $main # VERBOSE=1
 
 status=$?
 if [ $status != 0 ]; then
