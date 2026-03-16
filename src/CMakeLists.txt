@@ -42,3 +42,7 @@ add_executable(${main_name} ${main_name}.cc)
 target_link_libraries(${main_name} main_decorator)
 add_subdirectory(${main_name}_deps)
 target_link_libraries(${main_name} book book_with_pimpl book_template_with_pimpl)
+
+if ($ENV{use_cpp_modules})
+    add_subdirectory(cpp23_modules)
+endif()
