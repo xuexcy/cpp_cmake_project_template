@@ -16,10 +16,22 @@ target_sources(net PUBLIC
 
 target_link_libraries(net core data)
 
+add_library(shape)
+target_sources(shape
+  PUBLIC
+    FILE_SET CXX_MODULES
+    FILES shape/shape.cppm shape/point.cppm shape/rectangle.cppm
+  PRIVATE
+    shape/rectangle.cpp)
+set_property(SOURCE shape/rectangle.cppm PROPERTY CXX_MODULE_NAME "shape:rectangle")
+set_property(SOURCE shape/rectangle.cppm PROPERTY CXX_MODULE_IS_PARTITION ON)
+set_property(SOURCE shape/point.cppm PROPERTY CXX_MODULE_NAME "shape:point")
+set_property(SOURCE shape/point.cppm PROPERTY CXX_MODULE_IS_PARTITION ON)
+
 add_library(hello_world)
 target_sources(hello_world PUBLIC
   FILE_SET CXX_MODULES
   FILES hello_world.cppm)
 
 add_executable(cpp23_module_main main.cc)
-target_link_libraries(cpp23_module_main core data net hello_world)
+target_link_libraries(cpp23_module_main core data net shape hello_world)

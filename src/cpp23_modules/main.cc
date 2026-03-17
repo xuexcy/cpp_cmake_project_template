@@ -20,6 +20,7 @@ import core;
 import data;
 import net;
 
+import shape;
 import hello_world;
 
 void run() {
@@ -34,11 +35,19 @@ void run() {
   std::println("{}", client.fetch_username(UserId{999}));
 }
 
+void run_shape() {
+  Rectangle r{{1, 2}, {3, 4}};
+  std::println("area: {}", r.area());
+  std::println("width: {}", r.width());
+  std::println("height: {}", r.height());
+}
+
 int main() {
   std::println("{}", hello());
   hello_world::global_data = 100;
   hello_world::say_hello();
 
   run();
+  run_shape();
   return 0;
 }
